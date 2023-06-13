@@ -92,15 +92,11 @@ const usePomodoro = () => {
     }
 
     if (timerState.isPause) {
-      return () => {
-        clearInterval(timerInterval.current);
-        setTimerState(prev => ({ ...prev, isProgress: false }));
-      };
+      clearInterval(timerInterval.current);
+      setTimerState(prev => ({ ...prev, isProgress: false }));
     }
     if (isTimerEnd) {
-      return () => {
-        clearInterval(timerInterval.current);
-      };
+      clearInterval(timerInterval.current);
     }
   }, [
     timerState.isPause,
